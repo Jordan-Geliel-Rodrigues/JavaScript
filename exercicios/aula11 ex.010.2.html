@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Fronteira</title>
+</head>
+<body>
+    <h1>Carteira de Nacionalidade</h1>
+    Coloque onde vive: <input type="text" name="nac" id="nac"> país.
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="ver">
+
+    </div>
+    <script>
+        function verificar() {
+            var txtn = window.document.querySelector('input#nac')
+            var ver = window.document.querySelector('div#ver')
+            var nac = String(txtn.value)
+            ver.innerHTML = `<p>Você vive no/a ${nac}!`
+            if (nac == 'Brasil') {
+                ver.innerHTML += `<p>Sua nacionalidade é Brasileiro/a!</p>`
+            } else {
+                ver.innerHTML += `<p>Sua nacionalidade é Estrangeira!<p>`
+            }
+        }
+    </script>
+</body>
+</html>
